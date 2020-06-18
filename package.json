@@ -1,0 +1,25 @@
+{
+  "name": "reviews",
+  "version": "1.0.0",
+  "description": "package for reviews_service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server-dev": "node server/index.js",
+    "react-dev": "",
+    "db:setup": "node database/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hungry-humans/reviews.git"
+  },
+  "author": "Nathan Sou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hungry-humans/reviews/issues"
+  },
+  "homepage": "https://github.com/hungry-humans/reviews#readme",
+  "dependencies": {
+    "pg": "^8.2.1"
+  }
+}
