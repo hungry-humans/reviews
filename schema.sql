@@ -1,6 +1,6 @@
 -- If superuser:    psql postgres < schema.sql
 -- If user:         psql -U me -d postgres < schema.sql
-
+DROP DATABASE yelp;
 CREATE DATABASE yelp;
 
 ALTER DATABASE yelp OWNER TO me;
@@ -25,8 +25,8 @@ CREATE TABLE reviews (
   userId           INTEGER,
   businessId       INTEGER,
   createdAt        VARCHAR(255),
-  rating            INTEGER,
-  body              TEXT,
+  rating           INTEGER,
+  body             TEXT,
   usefulCount      INTEGER,
   funnyCount       INTEGER,
   coolCount        INTEGER
@@ -38,7 +38,7 @@ ALTER TABLE reviews
 
 CREATE TABLE photos (
   photoId          INTEGER,
-  photoUrl         VARCHAR(255),
+  photoUrl         TEXT,
   reviewId         INTEGER
 );
 
