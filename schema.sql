@@ -8,40 +8,40 @@ ALTER DATABASE yelp OWNER TO me;
 \connect yelp
 
 CREATE TABLE users (
-  userId            INTEGER,
+  user_id           INTEGER,
   username          VARCHAR(255),
-  profilePhoto      VARCHAR(255),
+  profile_photo     VARCHAR(255),
   location          VARCHAR(255),
-  friendsCount      INTEGER,
-  reviewsCount      INTEGER,
-  photosCount       INTEGER,
+  friends_count     INTEGER,
+  reviews_count     INTEGER,
+  photos_count      INTEGER,
   elite             BOOLEAN
 );
 
-ALTER TABLE users ADD PRIMARY KEY (userId);
+ALTER TABLE users ADD PRIMARY KEY (user_id);
 
 CREATE TABLE reviews (
-  reviewId         INTEGER,
-  userId           INTEGER,
-  businessId       INTEGER,
-  createdAt        VARCHAR(255),
-  rating           INTEGER,
-  body             TEXT,
-  usefulCount      INTEGER,
-  funnyCount       INTEGER,
-  coolCount        INTEGER
+  review_id         INTEGER,
+  user_id           INTEGER,
+  business_id       INTEGER,
+  created_at        VARCHAR(255),
+  rating            INTEGER,
+  body              TEXT,
+  useful_count      INTEGER,
+  funny_count       INTEGER,
+  cool_count        INTEGER
 );
 
-ALTER TABLE reviews ADD PRIMARY KEY(reviewId);
+ALTER TABLE reviews ADD PRIMARY KEY(review_id);
 ALTER TABLE reviews
-  ADD CONSTRAINT reviewUserIdFkey FOREIGN KEY (userId) REFERENCES users (userId);
+  ADD CONSTRAINT review_user_id_fkey FOREIGN KEY (user_id) REFERENCES users (user_id);
 
 CREATE TABLE photos (
-  photoId          INTEGER,
-  photoUrl         TEXT,
-  reviewId         INTEGER
+  photo_id          INTEGER,
+  photo_url         TEXT,
+  review_id         INTEGER
 );
 
-ALTER TABLE photos ADD PRIMARY KEY(photoId);
+ALTER TABLE photos ADD PRIMARY KEY(photo_id);
 ALTER TABLE photos
-  ADD CONSTRAINT photoReviewIdFkey FOREIGN KEY (reviewId) REFERENCES reviews (reviewId);
+  ADD CONSTRAINT photo_review_id_fkey FOREIGN KEY (review_id) REFERENCES reviews (review_id);
