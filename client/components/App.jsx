@@ -20,7 +20,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>{this.state.reviews}</div>
+      <div>
+        <h1>Welcome!</h1>
+      </div>
     );
   }
 }
