@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import ReviewsList from './ReviewsList.jsx';
+
 class App extends React.Component {
   constructor() {
     super();
@@ -10,7 +12,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/biz/1/reviews')
+    axios.get('http://localhost:3000/biz/9/reviews')
       .then((results) => {
         this.setState({
           reviews: results.data,
@@ -21,7 +23,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Welcome!</h1>
+        <ReviewsList reviews={this.state.reviews} />
       </div>
     );
   }
