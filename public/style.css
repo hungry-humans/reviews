@@ -121,9 +121,103 @@ body {
 	text-decoration: underline;
 }
 
-.body-info {
+.body-info-container {
 	padding: 5px;
 	flex: 2;
 	font-size: 14px;
 	line-height: 20px;
+	margin-bottom: 10px;
+}
+
+.body-info-container .header-info {
+	margin-bottom: 10px;
+}
+
+.body-info-container .body-rating-image {
+	width: 108px;
+	height: 20px;
+	background-position: 0 0px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/yelp_reviews_rating.png);
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.body-info-container .body-rating-image-1-5 {
+	background-position: 0 -20px;
+}
+
+.body-info-container .body-rating-image-1 {
+	background-position: 0 -40px;
+}
+
+.body-info-container .body-rating-image-2-5 {
+	background-position: 0 -60px;
+}
+
+.body-info-container .body-rating-image-2 {
+	background-position: 0 -80px;
+}
+
+.body-info-container .body-rating-image-3-5 {
+	background-position: 0 -100px;
+}
+
+.body-info-container .body-rating-image-3 {
+	background-position: 0 -120px;
+}
+
+.body-info-container .body-rating-image-4-5 {
+	background-position: 0 -140px;
+}
+
+.body-info-container .body-rating-image-4 {
+	background-position: 0 -160px;
+}
+
+.body-info-container .body-rating-image-5 {
+	background-position: 0 -180px;
+}
+
+.body-info-container .body-date {
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+.body-info-container .photos-checkins {
+	color: #757280;
+	font-size: 12px;
+	display: inline-block;
+}
+
+.body-info-container .photos-checkins .photos-header{
+	vertical-align: middle;
+}
+
+.body-info-container .photos-checkins .text {
+	margin-left: 2px;
+	vertical-align: middle;
+}
+
+.body-info-container .photos-svg-image {
+	fill: #2b273c;
+	vertical-align: middle;
+}
+
+.body-info-container .svg-image {
+	vertical-align: middle;
+}
+
+.body-info-container .photos-checkins .check-in-header{
+	margin-left: 17px;
+}
+
+.body-info-container .check-in-svg-image {
+	fill: #0077bc;
+}
+
+
+
+.body-info-container .check-in-svg-image .svg-image {
+	vertical-align: middle;
 }
