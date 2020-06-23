@@ -59,7 +59,7 @@ body {
 #reviews-list {
 	display: flex;
 	flex-direction: column;
-	width: 60%;
+	width: 800px;
 }
 
 .review-post-container {
@@ -73,7 +73,6 @@ body {
 
 .user-info-container {
 	padding: 5px;
-	/* border: 1px #555 solid; */
 	flex: 1;
 	display: flex;
 	flex-direction: row;
@@ -86,10 +85,20 @@ body {
 	height: 60px;
 	width: 60px;
 	margin: 3px;
+	line-height: 18px;
 }
 
 .user-box-2 {
 	margin-left: 5px;
+}
+
+.user-box-2 div{
+	height: 18px;
+}
+
+.user-box-2 .svg-image {
+	fill: #f15c00;
+	vertical-align: middle;
 }
 
 .user-box-2 .username-anchor,
@@ -114,7 +123,6 @@ body {
 
 .body-info {
 	padding: 5px;
-	/* border: 1px #555 solid; */
 	flex: 2;
 	font-size: 14px;
 	line-height: 20px;

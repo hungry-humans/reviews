@@ -1,8 +1,9 @@
 import React from 'react';
+import moment from 'moment';
 
 const Body = ({ review }) => (
   <div className="body-info container">
-    <div>{review.created_at}</div>
+    <div>{moment(review.created_at).format('M/D/YYYY')}</div>
     <div>{review.body}</div>
   </div>
 );
