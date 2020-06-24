@@ -63,7 +63,6 @@ body {
 }
 
 .review-post-container {
-	border-top: 1px #ccc solid;
 	border-bottom: 1px #ccc solid;
 	padding-top: 20px;
 	padding-left: 20px;
@@ -251,4 +250,45 @@ body {
 	fill: #2b273c;
 	border: none;
 	outline: rgba(0,0,0,.12);
+}
+
+.body-photos {
+	margin-top: 20px;
+}
+
+.body-photos .solo-photo {
+	vertical-align: middle;
+}
+
+.body-photos .solo-food-photo {
+	height: 348px;
+	width: 348px;
+	border-radius: 4px;
+}
+
+.body-photos .duo-photos {
+	display: flex;
+	flex-direction: row;
+	margin-right: -12px;
+}
+
+.body-photos .duo-food-wrapper {
+	margin-right: 12px;
+	margin-bottom: 12px;
+}
+
+.body-photos .duo-food-photo {
+	height: 168px;
+	width: 168px;
+	border-radius: 4px;
+}
+
+.body-photos .more-photos,
+.body-photos .more-photos:visited {
+	color: #00838f;
+	text-decoration: none;
+}
+
+.body-photos .more-photos:hover {
+	text-decoration: underline;
 }

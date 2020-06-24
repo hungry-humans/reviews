@@ -18,4 +18,12 @@ app.get('/biz/:business_id/reviews', (req, res) => {
   });
 });
 
+app.get('/biz/:business_id/reviews/:review_id/photos', (req, res) => {
+  const queryString = `SELECT * FROM photos
+    WHERE review_id = ${req.params.review_id}`;
+  db.query(queryString, (error, result) => {
+    res.send(result.rows);
+  });
+});
+
 app.listen(port, () => console.log(`Listening on port http://localhost:${port}`));

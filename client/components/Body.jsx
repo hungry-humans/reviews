@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
+import BodyPhotos from './BodyPhotos.jsx';
 import BodyFooter from './BodyFooter.jsx';
 
 const Body = ({ review }) => (
@@ -30,7 +31,8 @@ const Body = ({ review }) => (
       </div>
     </div>
     <div>{review.body}</div>
-    <BodyFooter review={review}/>
+    <BodyPhotos review={review} />
+    <BodyFooter review={review} />
   </div>
 );
 
