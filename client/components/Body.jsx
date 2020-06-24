@@ -1,10 +1,12 @@
 import React from 'react';
 import moment from 'moment';
 
+import BodyFooter from './BodyFooter.jsx';
+
 const Body = ({ review }) => (
   <div className="body-info-container">
-    <div>
-      <div className="header-info">
+    <div className="header-info">
+      <div className="rating-info">
         <span className={`body-rating-image body-rating-image-${review.rating.toString().replace('.', '-')}`}></span>
         <span className="body-date"> {moment(review.created_at).format('M/D/YYYY')}</span>
       </div>
@@ -27,8 +29,8 @@ const Body = ({ review }) => (
         </span>
       </div>
     </div>
-
     <div>{review.body}</div>
+    <BodyFooter review={review}/>
   </div>
 );
 
