@@ -29,7 +29,6 @@ const BodyFooter = ({ review }) => (
         {(review.cool_count > 0) ? <span className="footer-text" style={{fontWeight: "bold"}}>{review.cool_count}</span> : <span className="footer-text"></span>}
         </div>
     </button>
-
   </div>
 );
 
