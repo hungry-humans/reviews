@@ -12,7 +12,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/biz/9/reviews')
+    axios.get('http://localhost:3000/biz/4/reviews')
       .then((results) => {
         this.setState({
           reviews: results.data,

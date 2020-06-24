@@ -29,7 +29,7 @@ const BodyPhotos = ({ review }) => {
     <div className="body-photos">
       {photoContainer}
       {/* See all photos from Ajay H. for Tang 190 */}
-      {(review.photos !== undefined && review.photos.length > 3) ? <div><a href="#" className="more-photos">See all photos from {review.abbrname} for </a></div> : <div></div>}
+      {(review.photos !== undefined && review.photos.length > 3) ? <div><a href="#" className="more-photos">See all photos from {review.abbrname} for {review.business_name}</a></div> : <div></div>}
     </div>
   )
 };
