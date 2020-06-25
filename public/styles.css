@@ -385,8 +385,8 @@ body {
 	vertical-align: middle;
 }
 
-.body-info-container .photos-checkins .check-in-header{
-	margin-left: 17px;
+.body-info-container .photos-checkins .photos-header{
+	margin-right: 17px;
 }
 
 .body-info-container .check-in-svg-image {

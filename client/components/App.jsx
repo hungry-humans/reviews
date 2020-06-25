@@ -10,7 +10,8 @@ class App extends React.Component {
     super();
     this.state = {
       allReviews: [],
-      visibleReviews: []
+      visibleReviews: [],
+      allPhotos: []
     };
     this.handleSearch = this.handleSearch.bind(this);
   }
@@ -22,6 +23,23 @@ class App extends React.Component {
           allReviews: results.data,
           visibleReviews: results.data
         });
+        const reviews = results.data;
+        const getPhotos = reviews.map(review => {
+          return axios.get(`http://localhost:3000/biz/4/reviews/${review.review_id}/photos`)
+            .then(results => {
+              return results;
+            });
+        });
+        Promise.all(getPhotos)
+          .then(results => {
+            let allPhotos = [];
+            for (let i = 0; i < results.length; i++) {
+              allPhotos = allPhotos.concat(results[i].data);
+            }
+            this.setState({
+              allPhotos
+            });
+          });
       });
   }
 
@@ -36,7 +54,7 @@ class App extends React.Component {
     return (
       <div>
         <ReviewsHeader handleSearch={this.handleSearch} review={this.state.visibleReviews[0]}/>
-        <ReviewsList reviews={this.state.visibleReviews} />
+        <ReviewsList reviews={this.state.visibleReviews} photos={this.state.allPhotos}/>
       </div>
     );
   }
