@@ -43,7 +43,7 @@ class App extends React.Component {
   }
 
   handleSearch(query) {
-    const filteredReviews = this.state.allReviews.filter(review => review.body.toLowerCase().includes(query));
+    const filteredReviews = this.state.allReviews.filter(review => review.body.toLowerCase().includes(query.toLowerCase()));
     this.setState({
       visibleReviews: filteredReviews
     });
