@@ -7,7 +7,6 @@ import Body from './Body.jsx';
 const ReviewPost = ({ review }) => {
   const firstAndLastName = review.username.split(' ');
   review.abbrname = `${firstAndLastName[0]} ${firstAndLastName[1][0]}.`;
-  review.photos = [];
 
   return (
     <div className="review-post-container">
