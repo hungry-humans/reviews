@@ -9,7 +9,7 @@ const ReviewsHeader = (props) => {
       <div className="header-text-wrapper">
         <h4 className="header-text">Recommended Reviews</h4>
       </div>
-      <SearchAndSort handleSearch={props.handleSearch}/>
+      <SearchAndSort handleSearch={props.handleSearch} handleSort={props.handleSort}/>
       <ExampleAndWrite review={props.review}/>
     </div>
   )

@@ -14,6 +14,7 @@ class App extends React.Component {
       allPhotos: []
     };
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleSort = this.handleSort.bind(this);
   }
 
   componentDidMount() {
@@ -49,10 +50,88 @@ class App extends React.Component {
     });
   }
 
+  handleSort(query) {
+    let sortedReviews = this.state.allReviews.slice();
+    if (query === 'newestFirst') {
+      sortedReviews.sort(this.sortNewest);
+    } else if (query === 'oldestFirst') {
+      sortedReviews.sort(this.sortOldest);
+    } else if (query === 'highestRated') {
+      sortedReviews.sort(this.sortHighest);
+    } else if (query === 'lowestRated') {
+      sortedReviews.sort(this.sortLowest);
+    } else if (query === 'elites') {
+      sortedReviews.sort(this.sortElites);
+    }
+    this.setState({
+      visibleReviews: sortedReviews
+    });
+  }
+
+  sortNewest(a, b) {
+    a = Date.parse(a.created_at);
+    b = Date.parse(b.created_at);
+    if (a > b) {
+      return -1;
+    } else if (a < b) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
+  sortOldest(a, b) {
+    a = Date.parse(a.created_at);
+    b = Date.parse(b.created_at);
+    if (a > b) {
+      return 1;
+    } else if (a < b) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+
+  sortHighest(a, b) {
+    a = a.rating;
+    b = b.rating;
+    if (a > b) {
+      return -1;
+    } else if (a < b) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
+  sortLowest(a, b) {
+    a = a.rating;
+    b = b.rating;
+    if (a > b) {
+      return 1;
+    } else if (a < b) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+
+  sortElites(a, b) {
+    a = a.elite;
+    b = b.elite;
+    if (a > b) {
+      return -1;
+    } else if (a < b) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
   render() {
     return (
       <div>
-        <ReviewsHeader handleSearch={this.handleSearch} review={this.state.visibleReviews[0]}/>
+        <ReviewsHeader handleSearch={this.handleSearch} handleSort={this.handleSort} review={this.state.visibleReviews[0]} />
         <ReviewsList reviews={this.state.visibleReviews} photos={this.state.allPhotos}/>
       </div>
     );

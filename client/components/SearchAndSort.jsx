@@ -7,7 +7,7 @@ const SearchAndSort= (props) => {
   return (
     <div className="search-and-sort">
       <SearchBar handleSearch={props.handleSearch}/>
-      <SortBar />
+      <SortBar handleSort={props.handleSort}/>
     </div>
   )
 };
