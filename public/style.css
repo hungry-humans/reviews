@@ -93,10 +93,13 @@ body {
 	margin-left: 5px;
 }
 
-.user-box-2 div{
+.user-box-2 div {
 	height: 18px;
 }
 
+.user-box-2 .bold-text {
+	font-weight: bold;
+}
 .user-box-2 .svg-image {
 	fill: #f15c00;
 	vertical-align: middle;

@@ -24,6 +24,7 @@ CREATE TABLE reviews (
   review_id         INTEGER,
   user_id           INTEGER,
   business_id       INTEGER,
+  business_name    VARCHAR(255),
   created_at        VARCHAR(255),
   rating            DECIMAL,
   check_ins         INTEGER,
