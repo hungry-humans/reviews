@@ -14,12 +14,14 @@ const comparator = (a, b) => {
   }
 };
 
-const ReviewsList = (props) => (
+const ReviewsList = (props) => {
+  return (
   <div id="reviews-list">
-    {props.reviews.sort(comparator).map(review => (
+    {props.reviews.map(review => (
       <ReviewPost review={review} />
     ))}
   </div>
-);
+  )
+};
 
 export default ReviewsList;
