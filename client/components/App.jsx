@@ -17,15 +17,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/biz/4/reviews')
+    axios.get('http://localhost:3000/biz/1/reviews')
       .then((results) => {
         this.setState({
           allReviews: results.data,
           visibleReviews: results.data
         });
-        const reviews = results.data;
-        const getPhotos = reviews.map(review => {
-          return axios.get(`http://localhost:3000/biz/4/reviews/${review.review_id}/photos`)
+        const getPhotos = results.data.map(review => {
+          return axios.get(`http://localhost:3000/biz/1/reviews/${review.review_id}/photos`)
             .then(results => {
               return results;
             });
