@@ -1,6 +1,7 @@
 import React from 'react';
 
-import SearchAndSort from './SearchSortRow.jsx';
+import SearchAndSort from './SearchAndSort.jsx';
+import ExampleAndWrite from './ExampleAndWrite.jsx';
 
 const ReviewsHeader = (props) => {
   return (
@@ -9,6 +10,7 @@ const ReviewsHeader = (props) => {
         <h4 className="header-text">Recommended Reviews</h4>
       </div>
       <SearchAndSort handleSearch={props.handleSearch}/>
+      <ExampleAndWrite review={props.review}/>
     </div>
   )
 };

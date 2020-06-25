@@ -5,7 +5,7 @@ import SortBar from './SortBar.jsx';
 
 const SearchAndSort= (props) => {
   return (
-    <div className="search-sort-row">
+    <div className="search-and-sort">
       <SearchBar handleSearch={props.handleSearch}/>
       <SortBar />
     </div>

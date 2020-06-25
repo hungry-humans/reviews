@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
   handleSearch(query) {
-    const filteredReviews = this.state.allReviews.filter(review => review.body.includes(query));
+    const filteredReviews = this.state.allReviews.filter(review => review.body.toLowerCase().includes(query));
     this.setState({
       visibleReviews: filteredReviews
     });
@@ -35,7 +35,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <ReviewsHeader handleSearch={this.handleSearch} />
+        <ReviewsHeader handleSearch={this.handleSearch} review={this.state.visibleReviews[0]}/>
         <ReviewsList reviews={this.state.visibleReviews} />
       </div>
     );
