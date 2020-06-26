@@ -38,7 +38,10 @@ const generateReviews = (reviewSize, userSize) => {
       body: [faker.lorem.paragraph(), faker.lorem.paragraphs()][faker.random.number(1)],
       useful_count: faker.random.number(200),
       funny_count: faker.random.number(200),
-      cool_count: faker.random.number(200)
+      cool_count: faker.random.number(200),
+      useful_active: faker.random.boolean(),
+      funny_active: faker.random.boolean(),
+      cool_active: faker.random.boolean()
     };
     reviews.push(review);
   }
@@ -71,9 +74,9 @@ const loadUser = ({user_id, username, profile_photo, location, friends_count, re
   });
 };
 
-const loadReview = ({review_id, user_id, business_id, business_name, created_at, rating, check_ins, body, useful_count, funny_count, cool_count}) => {
-  const queryString = `INSERT INTO reviews (review_id, user_id, business_id, business_name, created_at, rating, check_ins, body, useful_count, funny_count, cool_count)
-  VALUES (${review_id}, ${user_id}, ${business_id}, '${business_name.replace('\'', '\'\'')}', '${created_at}', ${rating}, ${check_ins},'${body.replace('\'', '\'\'')}', ${useful_count}, ${funny_count}, ${cool_count})`;
+const loadReview = ({review_id, user_id, business_id, business_name, created_at, rating, check_ins, body, useful_count, funny_count, cool_count, useful_active, funny_active, cool_active}) => {
+  const queryString = `INSERT INTO reviews (review_id, user_id, business_id, business_name, created_at, rating, check_ins, body, useful_count, funny_count, cool_count, useful_active, funny_active, cool_active)
+  VALUES (${review_id}, ${user_id}, ${business_id}, '${business_name.replace('\'', '\'\'')}', '${created_at}', ${rating}, ${check_ins},'${body.replace('\'', '\'\'')}', ${useful_count}, ${funny_count}, ${cool_count}, '${useful_active}', '${funny_active}', '${cool_active}')`;
 
   db.query(queryString, (error, result) => {
     if (error) {
