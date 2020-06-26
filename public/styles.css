@@ -199,6 +199,85 @@ body {
 	vertical-align: middle;
 }
 
+.write-box .rating-group-container-empty {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 0px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-1 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -64px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-2 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -128px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-3 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -192px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-4 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -256px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-5 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -288px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box input {
+	height: 32px;
+	width: 32px;
+	margin: 1px;
+	padding: 0px;
+	visibility: hidden;
+}
+
+.write-box ul div {
+	display: inline-block;
+}
+
+.write-box .radio-2 {
+	margin-left: 1px;
+}
+
+.write-box .radio-3 {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.write-box .radio-4 {
+	margin-right: 1px
+}
+
 .write-box .write-text-container {
 	height: 48px;
 	width: 100%;
