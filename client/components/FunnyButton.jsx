@@ -4,7 +4,7 @@ class FunnyButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: false
+      active: this.props.review.funny_active
     };
     this.handleToggleStateClick = this.handleToggleStateClick.bind(this);
   }

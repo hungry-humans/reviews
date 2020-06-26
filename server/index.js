@@ -28,4 +28,16 @@ app.get('/biz/:business_id/reviews/:review_id/photos', (req, res) => {
   });
 });
 
+app.put('/biz/:business_id/reviews/:review_id/:count/:action/:type/:active', (req, res) => {
+  const action = (req.params.action === 'increment') ? '+ 1' : '- 1';
+  const queryString = `UPDATE reviews SET ${req.params.count} = ${req.params.count} ${action}, ${req.params.type} = ${req.params.active} WHERE reviews.review_id = ${req.params.review_id}`
+  db.query(queryString, (error, result) => {
+    if (error) {
+      res.status(400).send(error);
+    } else {
+      res.status(200).send(result);
+    }
+  });
+});
+
 app.listen(port, () => console.log(`Listening on port http://localhost:${port}`));

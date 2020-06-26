@@ -21,11 +21,12 @@ class App extends React.Component {
     this.handlePagination = this.handlePagination.bind(this);
     this.handlePaginationRightClick = this.handlePaginationRightClick.bind(this);
     this.handlePaginationLeftClick = this.handlePaginationLeftClick.bind(this);
+    this.handleReviewButtonClick = this.handleReviewButtonClick.bind(this);
   }
 
   componentDidMount() {
     axios.get('http://localhost:3000/biz/1/reviews')
-      .then((results) => {
+      .then(results => {
         this.setState({
           allReviews: results.data,
           visibleReviews: results.data
@@ -156,6 +157,11 @@ class App extends React.Component {
     }
   }
 
+  handleReviewButtonClick(review, count, action, type, active) {
+    axios.put(`http://localhost:3000/biz/${review.business_id}/reviews/${review.review_id}/${count}/${action}/${type}/${active}`)
+      .then(result => console.log(result));
+  }
+
   render() {
     const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
     const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
@@ -164,7 +170,7 @@ class App extends React.Component {
     return (
       <div>
         <ReviewsHeader handleSearch={this.handleSearch} handleSort={this.handleSort} review={this.state.visibleReviews[0]}/>
-        <ReviewsList reviews={currentPosts} photos={this.state.allPhotos}/>
+        <ReviewsList reviews={currentPosts} photos={this.state.allPhotos} handleReviewButtonClick={this.handleReviewButtonClick}/>
         <Pagination currentPage={this.state.currentPage} postsPerPage={this.state.postsPerPage} totalPosts={this.state.visibleReviews.length} handlePagination={this.handlePagination} handlePaginationLeftClick={this.handlePaginationLeftClick}handlePaginationRightClick={this.handlePaginationRightClick}/>
       </div>
     );

@@ -4,12 +4,12 @@ import BodyHeader from './BodyHeader.jsx';
 import BodyPhotos from './BodyPhotos.jsx';
 import BodyFooter from './BodyFooter.jsx';
 
-const Body = ({ review }) => (
+const Body = ({ review, handleReviewButtonClick }) => (
   <div className="body-info-container">
     <BodyHeader review={review} />
     <div>{review.body}</div>
     <BodyPhotos review={review} />
-    <BodyFooter review={review} />
+    <BodyFooter review={review} handleReviewButtonClick={handleReviewButtonClick} />
   </div>
 );
 
