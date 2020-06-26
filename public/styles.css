@@ -66,7 +66,7 @@ body {
 	padding-top: 30px;
 	padding-left: 30px;
 	padding-bottom: 30px;
-	border-bottom: 1px #ccc solid;
+	border-bottom: 1px rgb(238, 238, 239) solid;
 }
 
 #reviews-header .header-text-wrapper {
@@ -86,7 +86,7 @@ body {
 
 .search-bar {
 	display: inline-block;
-	margin-right: 30px;
+	margin-right: 50px;
 }
 
 .search-query-wrapper {
@@ -151,20 +151,32 @@ body {
 	color: #2b273c;
 }
 
-.sort-bar .sort-drop-down {
+.sort-bar .sort-drop-down select {
 	color: #00838f;
 	font-weight: bold;
+	border: none;
 }
 
 .sort-bar .sort-drop-down a,
 .sort-bar .sort-drop-down a:visited {
 	color: #00838f;
 	text-decoration: none;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 14px;
+}
+
+.sort-bar .sort-drop-down select:hover {
+	border: none;
+	text-decoration: underline;
 }
 
 .sort-bar .sort-drop-down a:hover,
 .sort-bar .sort-drop-down a:active {
 	text-decoration: underline;
+}
+
+.sort-bar .sort-drop-down select:focus {
+	outline: none;
 }
 
 .sort-bar .svg-image {
@@ -201,6 +213,85 @@ body {
 	vertical-align: middle;
 }
 
+.write-box .rating-group-container-empty {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 0px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-1 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -64px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-2 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -128px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-3 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -192px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-4 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -256px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-5 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -288px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box input {
+	height: 32px;
+	width: 32px;
+	margin: 1px;
+	padding: 0px;
+	visibility: hidden;
+}
+
+.write-box ul div {
+	display: inline-block;
+}
+
+.write-box .radio-2 {
+	margin-left: 1px;
+}
+
+.write-box .radio-3 {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.write-box .radio-4 {
+	margin-right: 1px
+}
+
 .write-box .write-text-container {
 	height: 48px;
 	width: 100%;
@@ -233,7 +324,7 @@ body {
 }
 
 .review-post-container {
-	border-bottom: 1px #ccc solid;
+	border-bottom: 1px rgb(238, 238, 239) solid;
 	padding-top: 20px;
 	padding-left: 20px;
 	padding-right: 10px;
@@ -406,7 +497,9 @@ body {
 }
 
 .footer-info .review-btn {
-	margin: 15px 10px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-right: 15px;
 	border: none;
 	background-color: #fff;
 	padding: 3px;
@@ -419,9 +512,10 @@ body {
 }
 
 .footer-info .review-btn:focus {
-	font-weight: bold;
-	fill: #2b273c;
 	border: none;
+	background-color: rgba(0,0,0,.12);
+	border-color: #bbbac0;
+	box-shadow: 0 0 4px 1px rgba(0,0,0,.35);
 	outline: rgba(0,0,0,.12);
 }
 
@@ -464,4 +558,56 @@ body {
 
 .body-photos .more-photos:hover {
 	text-decoration: underline;
+}
+
+.pagination {
+	margin-top: 22px;
+	margin-bottom: 22px;
+	padding-top: 22px;
+	padding-bottom: 22px;
+	border-top: 1px rgb(238, 238, 239) solid;
+	border-bottom: 1px rgb(238, 238, 239) solid;
+	display: flex;
+	justify-content: space-between;
+}
+
+.pagination .page-group .page-item {
+	display: inline;
+	vertical-align: middle;
+}
+
+.pagination .page-group a,
+.pagination .page-group a:visited {
+	padding-left: 6px;
+	padding-right: 6px;
+	color: #757280;
+	text-decoration: none;
+	border: none;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 16px;
+}
+
+.pagination .page-group a:hover {
+	color: #2b273c;
+	text-decoration: none;
+}
+
+.pagination .page-group a:active {
+	border: 1px #00838f solid;
+}
+
+.pagination .svg-image {
+	fill: #757280;
+	vertical-align: middle;
+}
+
+.pagination .svg-image:hover {
+	fill: #2b273c;
+	vertical-align: middle;
+}
+
+.pagination .page-text span	{
+	vertical-align: middle;
+	color: #757280;
+	font-size: 14px;
 }
