@@ -3,7 +3,6 @@ import React from 'react';
 import ReviewPost from './ReviewPost.jsx';
 
 const ReviewsList = (props) => {
-  console.log(props.reviews);
   return (
   <div id="reviews-list">
     {props.reviews.map(review => {
