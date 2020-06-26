@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import ReviewsHeader from './ReviewsHeader.jsx';
 import ReviewsList from './ReviewsList.jsx';
+import Pagination from './Pagination.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -11,10 +12,15 @@ class App extends React.Component {
     this.state = {
       allReviews: [],
       visibleReviews: [],
-      allPhotos: []
+      allPhotos: [],
+      currentPage: 1,
+      postsPerPage: 3
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleSort = this.handleSort.bind(this);
+    this.handlePagination = this.handlePagination.bind(this);
+    this.handlePaginationRightClick = this.handlePaginationRightClick.bind(this);
+    this.handlePaginationLeftClick = this.handlePaginationLeftClick.bind(this);
   }
 
   componentDidMount() {
@@ -128,11 +134,38 @@ class App extends React.Component {
     }
   }
 
+  handlePagination(number) {
+    this.setState({
+      currentPage: number
+    });
+  }
+
+  handlePaginationLeftClick(firstPage) {
+    if (this.state.currentPage > firstPage) {
+      this.setState({
+        currentPage: this.state.currentPage - 1
+      })
+    }
+  }
+
+  handlePaginationRightClick(lastPage) {
+    if (this.state.currentPage < lastPage) {
+      this.setState({
+        currentPage: this.state.currentPage + 1
+      })
+    }
+  }
+
   render() {
+    const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
+    const currentPosts = this.state.visibleReviews.slice(indexOfFirstPost, indexOfLastPost);
+
     return (
       <div>
-        <ReviewsHeader handleSearch={this.handleSearch} handleSort={this.handleSort} review={this.state.visibleReviews[0]} />
-        <ReviewsList reviews={this.state.visibleReviews} photos={this.state.allPhotos}/>
+        <ReviewsHeader handleSearch={this.handleSearch} handleSort={this.handleSort} review={this.state.visibleReviews[0]}/>
+        <ReviewsList reviews={currentPosts} photos={this.state.allPhotos}/>
+        <Pagination currentPage={this.state.currentPage} postsPerPage={this.state.postsPerPage} totalPosts={this.state.visibleReviews.length} handlePagination={this.handlePagination} handlePaginationLeftClick={this.handlePaginationLeftClick}handlePaginationRightClick={this.handlePaginationRightClick}/>
       </div>
     );
   }
