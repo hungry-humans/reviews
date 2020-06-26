@@ -1,0 +1,613 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+   Main CSS Styling
+*/
+
+/* "Helvetica Neue", Helvetica, */
+body {
+	font-family: 'Open Sans', Arial, sans-serif;
+	/* font-size: 11px; */
+}
+
+#app {
+	width: 800px;
+}
+
+#reviews-header {
+	font-size: 14px;
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px rgb(238, 238, 239) solid;
+}
+
+#reviews-header .header-text-wrapper {
+	margin-bottom: 26px;
+}
+
+#reviews-header .header-text {
+	color: #2b273c;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 26px;
+}
+
+.search-and-sort {
+	margin-bottom: 20px;
+}
+
+.search-bar {
+	display: inline-block;
+	margin-right: 50px;
+}
+
+.search-query-wrapper {
+	display: inline-block;
+	width: 484px;
+}
+
+.search-query {
+	width: 100%;
+	height: 48px;
+	padding-left: 15px;
+	vertical-align: middle;
+	border: 1px solid #bbbac0;
+	border-radius: 4px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	transition: border-color .2s ease-in-out;
+}
+
+.search-query:hover,
+.search-query:active {
+	border-color: rgb(117, 114, 128);
+}
+
+.search-query:focus {
+	outline: none;
+}
+
+.search-btn-wrapper {
+	display: inline-block;
+}
+
+.search-btn {
+	background-color: rgb(244, 57, 57);
+	height: 52px;
+	width: 56px;
+	vertical-align: middle;
+	border: none;
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+	transition: .2s ease-in-out;
+}
+
+.search-btn:focus {
+	outline: none;
+}
+
+.search-btn:hover,
+.search-btn:focus {
+	background-color:rgb(244, 13, 21);
+}
+
+.search-btn .svg-icon {
+	fill: #fff;
+	vertical-align: middle;
+}
+
+.sort-bar {
+	display: inline-block;
+}
+
+.sort-bar .sort-text {
+	color: #2b273c;
+}
+
+.sort-bar .sort-drop-down select {
+	color: #00838f;
+	font-weight: bold;
+	border: none;
+}
+
+.sort-bar .sort-drop-down a,
+.sort-bar .sort-drop-down a:visited {
+	color: #00838f;
+	text-decoration: none;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 14px;
+}
+
+.sort-bar .sort-drop-down select:hover {
+	border: none;
+	text-decoration: underline;
+}
+
+.sort-bar .sort-drop-down a:hover,
+.sort-bar .sort-drop-down a:active {
+	text-decoration: underline;
+}
+
+.sort-bar .sort-drop-down select:focus {
+	outline: none;
+}
+
+.sort-bar .svg-image {
+	fill: #00838f;
+	vertical-align: middle;
+}
+
+.example-and-write {
+	display: flex;
+}
+
+.example-and-write .example-box {
+	flex: 1;
+}
+
+.example-and-write .write-box {
+	flex: 2;
+	background-color: #f4f4f4;
+	border: 1px rgb(238, 238, 239) solid;
+	border-radius: 4px;
+	height: 101px;
+	width: 100%;
+	padding: 24px;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+}
+
+.write-box .rating-container {
+	height: 54px;
+	width: 100%;
+	border-bottom: 1px rgb(238, 238, 239) solid;
+	margin-bottom: 16px;
+	vertical-align: middle;
+}
+
+.write-box .rating-group-container-empty {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 0px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-1 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -64px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-2 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -128px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-3 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -192px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-4 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -256px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box .rating-group-radio-5 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -288px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box input {
+	height: 32px;
+	width: 32px;
+	margin: 1px;
+	padding: 0px;
+	visibility: hidden;
+}
+
+.write-box ul div {
+	display: inline-block;
+}
+
+.write-box .radio-2 {
+	margin-left: 1px;
+}
+
+.write-box .radio-3 {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.write-box .radio-4 {
+	margin-right: 1px
+}
+
+.write-box .write-text-container {
+	height: 48px;
+	width: 100%;
+}
+
+.write-box .write-text {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.write-box .write-business-name {
+	font-weight: bold;
+}
+
+.write-box a,
+.write-box a:visited {
+	color: #2b273c;
+	text-decoration: none;
+}
+
+.write-box a:hover,
+.write-box a:active {
+	text-decoration: underline;
+	text-decoration-color: #00838f;
+}
+
+#reviews-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.review-post-container {
+	border-bottom: 1px rgb(238, 238, 239) solid;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.user-info-container {
+	padding: 5px;
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.user-box-1 img {
+	border-radius: 4px;
+	height: 60px;
+	width: 60px;
+	margin: 3px;
+	line-height: 18px;
+}
+
+.user-box-2 {
+	margin-left: 5px;
+}
+
+.user-box-2 div {
+	height: 18px;
+}
+
+.user-box-2 .bold-text {
+	font-weight: bold;
+}
+.user-box-2 .svg-image {
+	fill: #f15c00;
+	vertical-align: middle;
+}
+
+.user-box-2 .username-anchor,
+.user-box-2 .username-anchor:visited {
+	color: #00838f;
+	text-decoration: none;
+}
+
+.user-box-2 .username-anchor:hover {
+	text-decoration: underline;
+}
+
+.user-box-2 .elite-anchor,
+.user-box-2 .elite-anchor:visited {
+	color: #ff523d;
+	text-decoration: none;
+}
+
+.user-box-2 .elite-anchor:hover {
+	text-decoration: underline;
+}
+
+.body-info-container {
+	padding: 5px;
+	flex: 2;
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+
+.body-info-container .rating-info {
+	margin-bottom: 5px;
+}
+
+.body-info-container .body-rating-image {
+	width: 108px;
+	height: 20px;
+	background-position: 0 0px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/yelp_reviews_rating.png);
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.body-info-container .body-rating-image-1-5 {
+	background-position: 0 -20px;
+}
+
+.body-info-container .body-rating-image-1 {
+	background-position: 0 -40px;
+}
+
+.body-info-container .body-rating-image-2-5 {
+	background-position: 0 -60px;
+}
+
+.body-info-container .body-rating-image-2 {
+	background-position: 0 -80px;
+}
+
+.body-info-container .body-rating-image-3-5 {
+	background-position: 0 -100px;
+}
+
+.body-info-container .body-rating-image-3 {
+	background-position: 0 -120px;
+}
+
+.body-info-container .body-rating-image-4-5 {
+	background-position: 0 -140px;
+}
+
+.body-info-container .body-rating-image-4 {
+	background-position: 0 -160px;
+}
+
+.body-info-container .body-rating-image-5 {
+	background-position: 0 -180px;
+}
+
+.body-info-container .body-date {
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+.body-info-container .header-info {
+	margin-bottom: 15px;
+}
+
+.body-info-container .photos-checkins {
+	color: #757280;
+	font-size: 12px;
+	display: inline-block;
+}
+
+.body-info-container .photos-checkins .photos-header{
+	vertical-align: middle;
+}
+
+.body-info-container .photos-checkins .text {
+	margin-left: 2px;
+	vertical-align: middle;
+}
+
+.body-info-container .photos-svg-image {
+	fill: #2b273c;
+}
+
+.body-info-container .svg-image {
+	vertical-align: middle;
+}
+
+.body-info-container .photos-checkins .photos-header{
+	margin-right: 17px;
+}
+
+.body-info-container .check-in-svg-image {
+	fill: #0077bc;
+}
+
+.body-info-container .check-in-svg-image .svg-image {
+	vertical-align: middle;
+}
+
+.footer-info .svg-image {
+	fill: #2b273c;
+}
+
+.footer-info .footer-text {
+	vertical-align: middle;
+}
+
+.footer-info .review-btn {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-right: 15px;
+	border: none;
+	background-color: #fff;
+	padding: 3px;
+	transition: 1s;
+}
+
+.footer-info .review-btn:hover {
+	background-color: rgba(0,0,0,.12);
+	border-radius: 4px;
+}
+
+.footer-info .review-btn:focus {
+	border: none;
+	background-color: rgba(0,0,0,.12);
+	border-color: #bbbac0;
+	box-shadow: 0 0 4px 1px rgba(0,0,0,.35);
+	outline: rgba(0,0,0,.12);
+}
+
+.body-photos {
+	margin-top: 20px;
+}
+
+.body-photos .solo-photo {
+	vertical-align: middle;
+}
+
+.body-photos .solo-food-photo {
+	height: 348px;
+	width: 348px;
+	border-radius: 4px;
+}
+
+.body-photos .duo-photos {
+	display: flex;
+	flex-direction: row;
+	margin-right: -12px;
+}
+
+.body-photos .duo-food-wrapper {
+	margin-right: 12px;
+	margin-bottom: 12px;
+}
+
+.body-photos .duo-food-photo {
+	height: 168px;
+	width: 168px;
+	border-radius: 4px;
+}
+
+.body-photos .more-photos,
+.body-photos .more-photos:visited {
+	color: #00838f;
+	text-decoration: none;
+}
+
+.body-photos .more-photos:hover {
+	text-decoration: underline;
+}
+
+.pagination {
+	margin-top: 22px;
+	margin-bottom: 22px;
+	padding-top: 22px;
+	padding-bottom: 22px;
+	border-top: 1px rgb(238, 238, 239) solid;
+	border-bottom: 1px rgb(238, 238, 239) solid;
+	display: flex;
+	justify-content: space-between;
+}
+
+.pagination .page-group .page-item {
+	display: inline;
+	vertical-align: middle;
+}
+
+.pagination .page-group a,
+.pagination .page-group a:visited {
+	padding-left: 6px;
+	padding-right: 6px;
+	color: #757280;
+	text-decoration: none;
+	border: none;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 16px;
+}
+
+.pagination .page-group a:hover {
+	color: #2b273c;
+	text-decoration: none;
+}
+
+.pagination .page-group a:active {
+	border: 1px #00838f solid;
+}
+
+.pagination .svg-image {
+	fill: #757280;
+	vertical-align: middle;
+}
+
+.pagination .svg-image:hover {
+	fill: #2b273c;
+	vertical-align: middle;
+}
+
+.pagination .page-text span	{
+	vertical-align: middle;
+	color: #757280;
+	font-size: 14px;
+}
