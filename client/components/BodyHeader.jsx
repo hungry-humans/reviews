@@ -22,7 +22,7 @@ const BodyHeader = ({ review }) => {
         <BodyPhotosHeader review={review} />
       </div>
     )
-  } else if (review.checkins !== 0) {
+  } else if (review.check_ins !== 0) {
     photosCheckinsContainer = (
       <div className={styles['photos-checkins']}>
         <BodyCheckinsHeader review={review} />

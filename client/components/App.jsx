@@ -194,14 +194,14 @@ class App extends React.Component {
       });
   }
 
-  handleReviewSubmission(review, body) {
+  handleReviewSubmission(review, body, rating) {
     const obj = {
       user_id: 1,
       business_id: review.business_id,
       business_name: review.business_name,
       created_at: Date.now(),
-      rating: 4,
-      check_ins: 0,
+      rating: Number(rating),
+      checkins: 0,
       body: body,
       useful_count: 0,
       funny_count: 0,

@@ -102,6 +102,7 @@
 	float: left;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	width: 100%;
 }
 
 .write-modal-title-wrapper a {
@@ -109,6 +110,7 @@
 	color: #0073bb;
 	font-weight: bold;
 	font-size: 21px;
+	float: left;
 }
 
 .write-modal-title-wrapper a:hover {
@@ -156,4 +158,16 @@
 	display: inline-block;
 	font-weight: bold;
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.write-modal-review-rating {
+	float: right;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.write-modal-container input {
+	width: 50px;
+	height: 25px;
+	visibility: visible;
+	padding-left: 10px;
 }
