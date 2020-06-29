@@ -1,0 +1,9 @@
+.review-post-container {
+	border-bottom: 1px rgb(238, 238, 239) solid;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}

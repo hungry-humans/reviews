@@ -1,0 +1,109 @@
+.rating-info {
+	margin-bottom: 5px;
+}
+
+.body-rating-image-1-5 {
+	background-position: 0 -20px;
+	width: 108px;
+	height: 20px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/yelp_reviews_rating.png);
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.body-rating-image-1 {
+	background-position: 0 -40px;
+	width: 108px;
+	height: 20px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/yelp_reviews_rating.png);
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.body-rating-image-2-5 {
+	background-position: 0 -60px;
+	width: 108px;
+	height: 20px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/yelp_reviews_rating.png);
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.body-rating-image-2 {
+	background-position: 0 -80px;
+	width: 108px;
+	height: 20px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/yelp_reviews_rating.png);
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.body-rating-image-3-5 {
+	background-position: 0 -100px;
+	width: 108px;
+	height: 20px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/yelp_reviews_rating.png);
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.body-rating-image-3 {
+	background-position: 0 -120px;
+	width: 108px;
+	height: 20px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/yelp_reviews_rating.png);
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.body-rating-image-4-5 {
+	background-position: 0 -140px;
+	width: 108px;
+	height: 20px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/yelp_reviews_rating.png);
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.body-rating-image-4 {
+	background-position: 0 -160px;
+	width: 108px;
+	height: 20px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/yelp_reviews_rating.png);
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.body-rating-image-5 {
+	background-position: 0 -180px;
+	width: 108px;
+	height: 20px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/yelp_reviews_rating.png);
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.body-date {
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+.header-info {
+	margin-bottom: 15px;
+}
+
+.photos-checkins {
+	color: #757280;
+	font-size: 12px;
+	display: inline-block;
+	vertical-align: middle;
+}

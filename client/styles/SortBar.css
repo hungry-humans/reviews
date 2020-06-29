@@ -1,0 +1,45 @@
+.sort-bar {
+	display: inline-block;
+}
+
+.sort-bar .sort-text {
+	color: #2b273c;
+	font-size: 16px;
+	font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.sort-bar .sort-drop-down select {
+	cursor: pointer;
+	color: #00838f;
+	font-weight: bold;
+	font-size: 16px;
+	border: none;
+	font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.sort-bar .sort-drop-down a,
+.sort-bar .sort-drop-down a:visited {
+	color: #00838f;
+	text-decoration: none;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 14px;
+}
+
+.sort-bar .sort-drop-down select:hover {
+	border: none;
+	text-decoration: underline;
+}
+
+.sort-bar .sort-drop-down a:hover,
+.sort-bar .sort-drop-down a:active {
+	text-decoration: underline;
+}
+
+.sort-bar .sort-drop-down select:focus {
+	outline: none;
+}
+
+.sort-bar .svg-image {
+	fill: #00838f;
+	vertical-align: middle;
+}

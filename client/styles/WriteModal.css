@@ -1,0 +1,159 @@
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+	background-color: #f4f4f4;
+	margin: 20% auto;
+	width: 70%;
+	vertical-align: middle;
+}
+
+.close-button {
+	color: #f4f4f4;
+	float: left;
+	font-size: 30px;
+	vertical-align: middle;
+
+}
+
+.close-button:hover,
+.close-button:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.write-modal-container {
+	display: flex;
+	flex-direction: column;
+	background-color: #f4f4f4;
+	margin: 10%;
+	width: 60%;
+}
+
+.write-modal-header {
+	background-color: #d32323;
+	height: 40px;
+	width: 100%;
+	padding: 10px;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+
+.write-modal-header-container {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 13px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.write-modal-header-right {
+	width: 150px;
+}
+
+.write-modal-header-right div {
+	padding: 10px;
+	border: 1px #a71c1c solid;
+	border-radius: 3px;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	display: inline;
+}
+
+.write-modal-header-right .log-in-button:hover,
+.write-modal-header-right .log-in-button:focus {
+	background-color: #a71c1c;
+	outline: none;
+}
+
+.log-in-button {
+	background-color: #d32323;
+	color: #f5f5f5;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+.sign-up-button {
+	background-color: #f5f5f5;
+	color: #333;
+	cursor: pointer;
+}
+
+.write-modal-body {
+	background-color: #f5f5f5;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 100%;
+	vertical-align: middle;
+}
+
+.write-modal-title-wrapper {
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.write-modal-title-wrapper a {
+	cursor: pointer;
+	color: #0073bb;
+	font-weight: bold;
+	font-size: 21px;
+}
+
+.write-modal-title-wrapper a:hover {
+	text-decoration: underline;
+}
+
+.write-modal-review textarea {
+	font-size: 16px;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.write-modal-review textarea:focus {
+	outline: none;
+}
+
+.post-review-wrapper {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.post-review-button {
+	height: 48px;
+	width: 240px;
+	background-color: #d32323;
+	color: #fff;
+	border-radius: 4px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.review-post {
+	width: 100%;
+}
+
+.post-review-button:hover {
+	background-color: #dc4f4f;
+}
+
+.post-review-button:focus {
+	background-color: #a91c1c;
+}
+
+.post-review-button .text {
+	margin: 16px;
+	display: inline-block;
+	font-weight: bold;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}

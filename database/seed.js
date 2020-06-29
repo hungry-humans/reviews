@@ -6,7 +6,6 @@ const generateUsers = (size) => {
   const users = [];
   for (let count = 1; count <= size; count++) {
     const user = {
-      user_id: count,
       username: `${faker.name.firstName()} ${faker.name.lastName()}`,
       profile_photo: faker.image.avatar(),
       location: faker.fake("{{address.city}}, {{address.stateAbbr}}"),
@@ -28,7 +27,6 @@ const generateReviews = (reviewSize, userSize) => {
       rating = 5;
     }
     const review = {
-      review_id: count,
       user_id: faker.random.number(userSize - 1) + 1,
       business_id: faker.random.number(99) + 1,
       business_name: faker.company.companyName(),
@@ -52,7 +50,6 @@ const generatePhotos = (photoSize, reviewSize) => {
   const photos = [];
   for (let count = 1; count <= photoSize; count++) {
     const photo = {
-      photo_id: count,
       photo_url: faker.image.food(),
       review_id: faker.random.number(reviewSize) + 1
     };
@@ -61,42 +58,42 @@ const generatePhotos = (photoSize, reviewSize) => {
   return photos;
 };
 
-const loadUser = ({user_id, username, profile_photo, location, friends_count, reviews_count, photos_count, elite}) => {
-  const queryString = `INSERT INTO users (user_id, username, profile_photo, location, friends_count, reviews_count, photos_count, elite)
-  VALUES (${user_id}, '${username.replace('\'', '\'\'')}', '${profile_photo}', '${location.replace('\'', '\'\'')}', ${friends_count}, ${reviews_count}, ${photos_count}, '${elite}')`;
+const loadUser = ({username, profile_photo, location, friends_count, reviews_count, photos_count, elite}) => {
+  const queryString = `INSERT INTO users (username, profile_photo, location, friends_count, reviews_count, photos_count, elite)
+  VALUES ('${username.replace('\'', '\'\'')}', '${profile_photo}', '${location.replace('\'', '\'\'')}', ${friends_count}, ${reviews_count}, ${photos_count}, '${elite}')`;
 
   db.query(queryString, (error, result) => {
     if (error) {
       console.log('Error loading user: ', error);
     } else {
-      console.log(`Success loading user ${user_id}!`);
+      console.log(`Success loading user!`);
     }
   });
 };
 
 const loadReview = ({review_id, user_id, business_id, business_name, created_at, rating, check_ins, body, useful_count, funny_count, cool_count, useful_active, funny_active, cool_active}) => {
-  const queryString = `INSERT INTO reviews (review_id, user_id, business_id, business_name, created_at, rating, check_ins, body, useful_count, funny_count, cool_count, useful_active, funny_active, cool_active)
-  VALUES (${review_id}, ${user_id}, ${business_id}, '${business_name.replace('\'', '\'\'')}', '${created_at}', ${rating}, ${check_ins},'${body.replace('\'', '\'\'')}', ${useful_count}, ${funny_count}, ${cool_count}, '${useful_active}', '${funny_active}', '${cool_active}')`;
+  const queryString = `INSERT INTO reviews (user_id, business_id, business_name, created_at, rating, check_ins, body, useful_count, funny_count, cool_count, useful_active, funny_active, cool_active)
+  VALUES (${user_id}, ${business_id}, '${business_name.replace('\'', '\'\'')}', '${created_at}', ${rating}, ${check_ins},'${body.replace('\'', '\'\'')}', ${useful_count}, ${funny_count}, ${cool_count}, '${useful_active}', '${funny_active}', '${cool_active}')`;
 
   db.query(queryString, (error, result) => {
     if (error) {
       console.log('Error loading review: ', error);
     } else {
-      console.log(`Success loading review ${review_id}!`);
+      console.log(`Success loading review!`);
     }
   });
 };
 
 const loadPhoto = ({photo_id, photo_url, review_id}) => {
-  const queryString = `INSERT INTO photos (photo_id, photo_url, review_id)
-  VALUES (${photo_id}, '${photo_url}', ${review_id})`;
+  const queryString = `INSERT INTO photos (photo_url, review_id)
+  VALUES ('${photo_url}', ${review_id})`;
 
   db.query(queryString, (error, result) => {
     if (error) {
       // We can safely ignore an error where the review_id of the photo does not exist in the reviews table.
       console.log('Error loading photo because review does not exist');
     } else {
-      console.log(`Success loading photo ${photo_id}!`);
+      console.log(`Success loading photo!`);
     }
   });
 };

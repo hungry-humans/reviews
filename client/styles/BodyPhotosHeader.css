@@ -1,0 +1,17 @@
+.photos-header{
+	vertical-align: middle;
+	margin-right: 17px;
+}
+
+.text {
+	margin-left: 2px;
+	vertical-align: middle;
+}
+
+.photos-svg-image {
+	fill: #2b273c;
+}
+
+.svg-image {
+	vertical-align: middle;
+}

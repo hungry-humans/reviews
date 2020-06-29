@@ -1,0 +1,9 @@
+.solo-photo {
+	vertical-align: middle;
+}
+
+.solo-food-photo {
+	height: 348px;
+	width: 348px;
+	border-radius: 4px;
+}

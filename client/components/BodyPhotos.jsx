@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from '../styles/BodyPhotos.css';
+
 import SoloFoodPhoto from './SoloFoodPhoto.jsx';
 import DuoFoodPhotos from './DuoFoodPhotos.jsx';
 
@@ -17,7 +19,7 @@ const BodyPhotos = ({ review }) => {
       )
     } else if (review.photos.length >= 3) {
       photoContainer = (
-        <div className="trio-photos">
+        <div className={styles['trio-photos']}>
           <SoloFoodPhoto photos={review.photos} />
           <DuoFoodPhotos photos={review.photos.slice(1)} />
         </div>
@@ -26,10 +28,9 @@ const BodyPhotos = ({ review }) => {
   }
 
   return (
-    <div className="body-photos">
+    <div className={styles['body-photos']}>
       {photoContainer}
-      {/* See all photos from Ajay H. for Tang 190 */}
-      {(review.photos !== undefined && review.photos.length > 3) ? <div><a href="#" className="more-photos">See all photos from {review.abbrname} for {review.business_name}</a></div> : <div></div>}
+      {(review.photos !== undefined && review.photos.length > 3) ? <div><a href="#" className={styles['more-photos']}>See all photos from {review.abbrname} for {review.business_name}</a></div> : <div></div>}
     </div>
   )
 };

@@ -1,0 +1,16 @@
+.duo-photos {
+	display: flex;
+	flex-direction: row;
+	margin-right: -12px;
+}
+
+.duo-food-wrapper {
+	margin-right: 12px;
+	margin-bottom: 12px;
+}
+
+.duo-food-photo {
+	height: 168px;
+	width: 168px;
+	border-radius: 4px;
+}
