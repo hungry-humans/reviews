@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from '../styles/SortBar.css';
+
 class SortBar extends React.Component {
   constructor(props) {
     super(props);
@@ -18,10 +20,10 @@ class SortBar extends React.Component {
 
   render() {
     return (
-      <div className="sort-bar">
-        <span className="sort-text">Sort by </span>
-        <span className="sort-drop-down">
-          <select name="sort-select" id="sort-select" onChange={this.handleSortSelectChange}>
+      <div className={styles['sort-bar']}>
+        <span className={styles['sort-text']}>Sort by </span>
+        <span className={styles['sort-drop-down']}>
+          <select name="sort-select" id="sort-select" className={styles['sort-select']} onChange={this.handleSortSelectChange}>
             <option value="yelpSort" defaultValue>Yelp Sort</option>
             <option value="newestFirst">Newest First</option>
             <option value="oldestFirst">Oldest First</option>

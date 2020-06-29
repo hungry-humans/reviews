@@ -1,0 +1,53 @@
+.pagination {
+	margin-top: 22px;
+	margin-bottom: 22px;
+	padding-top: 22px;
+	padding-bottom: 22px;
+	border-top: 1px rgb(238, 238, 239) solid;
+	border-bottom: 1px rgb(238, 238, 239) solid;
+	display: flex;
+	justify-content: space-between;
+}
+
+.pagination .page-group .page-item {
+	display: inline;
+	vertical-align: middle;
+}
+
+.pagination .page-group a,
+.pagination .page-group a:visited {
+	padding-left: 6px;
+	padding-right: 6px;
+	color: #757280;
+	text-decoration: none;
+	border: none;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 16px;
+}
+
+.pagination .page-group a:hover {
+	color: #2b273c;
+	text-decoration: none;
+}
+
+.pagination .page-group a:active {
+	border: 1px #00838f solid;
+}
+
+.pagination .svg-image {
+	fill: #757280;
+	vertical-align: middle;
+}
+
+.pagination .svg-image:hover,
+.pagination .svg-image:focus {
+	fill: #2b273c;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.pagination .page-text span	{
+	vertical-align: middle;
+	color: #757280;
+	font-size: 14px;
+}

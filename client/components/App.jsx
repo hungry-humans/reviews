@@ -2,9 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
+import styles from '../styles/App.css';
+
 import ReviewsHeader from './ReviewsHeader.jsx';
 import ReviewsList from './ReviewsList.jsx';
 import Pagination from './Pagination.jsx';
+import WriteBox from './WriteBox.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -22,6 +25,7 @@ class App extends React.Component {
     this.handlePaginationRightClick = this.handlePaginationRightClick.bind(this);
     this.handlePaginationLeftClick = this.handlePaginationLeftClick.bind(this);
     this.handleReviewButtonClick = this.handleReviewButtonClick.bind(this);
+    this.handleReviewSubmission = this.handleReviewSubmission.bind(this);
   }
 
   componentDidMount() {
@@ -159,6 +163,54 @@ class App extends React.Component {
 
   handleReviewButtonClick(review, count, action, type, active) {
     axios.put(`http://localhost:3000/biz/${review.business_id}/reviews/${review.review_id}/${count}/${action}/${type}/${active}`)
+      .then(result => {
+        let updateCount;
+        let updateActive;
+        if (count === 'useful_count') {
+          updateCount = 'useful_count';
+          updateActive = 'useful_active';
+        } else if (count === 'funny_count') {
+          updateCount = 'funny_count';
+          updateActive = 'funny_active';
+        } else {
+          updateCount = 'cool_count';
+          updateActive = 'cool_active';
+        }
+
+        for (let i = 0; i < this.state.allReviews.length; i++) {
+          if (this.state.allReviews[i].review_id === review.review_id) {
+            if (action === 'increment') {
+              this.state.allReviews[i][updateCount] = this.state.allReviews[i][updateCount] + 1;
+            } else {
+              this.state.allReviews[i][updateCount] = this.state.allReviews[i][updateCount] - 1;
+            }
+            this.state.allReviews[i][updateActive]= active;
+          }
+        }
+
+        this.setState({
+          allReviews: this.state.allReviews
+        })
+      });
+  }
+
+  handleReviewSubmission(review, body, rating) {
+    const obj = {
+      user_id: 1,
+      business_id: review.business_id,
+      business_name: review.business_name,
+      created_at: Date.now(),
+      rating: Number(rating),
+      checkins: 0,
+      body: body,
+      useful_count: 0,
+      funny_count: 0,
+      cool_count: 0,
+      useful_active: false,
+      funny_active: false,
+      cool_active: false
+    };
+    axios.post(`http://localhost:3000/biz/${review.business_id}/reviews`, obj)
       .then(result => console.log(result));
   }
 
@@ -168,8 +220,8 @@ class App extends React.Component {
     const currentPosts = this.state.visibleReviews.slice(indexOfFirstPost, indexOfLastPost);
 
     return (
-      <div>
-        <ReviewsHeader handleSearch={this.handleSearch} handleSort={this.handleSort} review={this.state.visibleReviews[0]}/>
+      <div className={styles.app}>
+        <ReviewsHeader handleSearch={this.handleSearch} handleSort={this.handleSort} handleReviewSubmission={this.handleReviewSubmission} review={this.state.visibleReviews[0]}/>
         <ReviewsList reviews={currentPosts} photos={this.state.allPhotos} handleReviewButtonClick={this.handleReviewButtonClick}/>
         <Pagination currentPage={this.state.currentPage} postsPerPage={this.state.postsPerPage} totalPosts={this.state.visibleReviews.length} handlePagination={this.handlePagination} handlePaginationLeftClick={this.handlePaginationLeftClick}handlePaginationRightClick={this.handlePaginationRightClick}/>
       </div>

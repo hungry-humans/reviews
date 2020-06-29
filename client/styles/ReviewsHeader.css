@@ -1,0 +1,18 @@
+.reviews-header {
+	font-size: 14px;
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px rgb(238, 238, 239) solid;
+}
+
+.reviews-header .header-text-wrapper {
+	margin-bottom: 26px;
+}
+
+.reviews-header .header-text {
+	color: #2b273c;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 26px;
+}

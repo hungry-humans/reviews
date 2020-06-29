@@ -8,7 +8,7 @@ ALTER DATABASE yelp OWNER TO me;
 \connect yelp
 
 CREATE TABLE users (
-  user_id           INTEGER,
+  user_id           SERIAL,
   username          VARCHAR(255),
   profile_photo     VARCHAR(255),
   location          VARCHAR(255),
@@ -21,7 +21,7 @@ CREATE TABLE users (
 ALTER TABLE users ADD PRIMARY KEY (user_id);
 
 CREATE TABLE reviews (
-  review_id         INTEGER,
+  review_id         SERIAL,
   user_id           INTEGER,
   business_id       INTEGER,
   business_name     VARCHAR(255),
@@ -42,7 +42,7 @@ ALTER TABLE reviews
   ADD CONSTRAINT review_user_id_fkey FOREIGN KEY (user_id) REFERENCES users (user_id);
 
 CREATE TABLE photos (
-  photo_id          INTEGER,
+  photo_id          SERIAL,
   photo_url         TEXT,
   review_id         INTEGER
 );

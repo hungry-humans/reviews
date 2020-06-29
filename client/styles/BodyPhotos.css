@@ -1,0 +1,13 @@
+.body-photos {
+	margin-top: 20px;
+}
+
+.more-photos,
+.more-photos:visited {
+	color: #00838f;
+	text-decoration: none;
+}
+
+.more-photos:hover {
+	text-decoration: underline;
+}

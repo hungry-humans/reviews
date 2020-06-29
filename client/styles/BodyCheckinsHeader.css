@@ -1,0 +1,11 @@
+.text {
+	vertical-align: middle;
+}
+
+.check-in-svg-image {
+	fill: #0077bc;
+}
+
+.check-in-svg-image .svg-image {
+	vertical-align: middle;
+}

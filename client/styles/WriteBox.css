@@ -1,0 +1,133 @@
+.write-box {
+	flex: 2;
+	background-color: #f4f4f4;
+	border: 1px rgb(238, 238, 239) solid;
+	border-radius: 4px;
+	height: 101px;
+	width: 100%;
+	padding: 24px;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+}
+
+.rating-container {
+	height: 54px;
+	width: 100%;
+	border-bottom: 1px rgb(238, 238, 239) solid;
+	margin-bottom: 16px;
+	vertical-align: middle;
+}
+
+.rating-container .radio-1,
+.rating-container .radio-2,
+.rating-container .radio-3,
+.rating-container .radio-4,
+.rating-container .radio-5 {
+	cursor: pointer;
+}
+
+.rating-group-container-empty {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 0px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.rating-group-radio-1 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -64px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.rating-group-radio-2 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -128px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.rating-group-radio-3 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -192px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.rating-group-radio-4 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -256px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.rating-group-radio-5 {
+	height: 32px;
+	width: 176px;
+	display: inline-block;
+	background-position: 0 -288px;
+	background-image: url(https://7elp-photos.s3-us-west-1.amazonaws.com/stars_v2.yelp_design_web.yji-52d3d7a328db670d4402843cbddeed89.png);
+	vertical-align: middle;
+}
+
+.write-box input {
+	height: 32px;
+	width: 32px;
+	margin: 1px;
+	padding: 0px;
+	visibility: hidden;
+}
+
+.write-box ul div {
+	display: inline-block;
+}
+
+.radio-2 {
+	margin-left: 1px;
+}
+
+.radio-3 {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.radio-4 {
+	margin-right: 1px
+}
+
+.write-text-container {
+	height: 48px;
+	width: 100%;
+}
+
+.write-text {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.write-business-name {
+	font-weight: bold;
+}
+
+.write-box a,
+.write-box a:visited {
+	color: #2b273c;
+	text-decoration: none;
+}
+
+.write-box a:hover,
+.write-box a:active {
+	text-decoration: underline;
+	text-decoration-color: #00838f;
+}

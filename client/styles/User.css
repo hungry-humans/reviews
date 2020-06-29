@@ -1,0 +1,52 @@
+.user-info-container {
+	padding: 5px;
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.user-box-1 img {
+	border-radius: 4px;
+	height: 60px;
+	width: 60px;
+	margin: 3px;
+	line-height: 18px;
+}
+
+.user-box-2 {
+	margin-left: 5px;
+}
+
+.user-box-2 div {
+	height: 18px;
+}
+
+.user-box-2 .bold-text {
+	font-weight: bold;
+}
+.user-box-2 .svg-image {
+	fill: #f15c00;
+	vertical-align: middle;
+}
+
+.user-box-2 .username-anchor,
+.user-box-2 .username-anchor:visited {
+	color: #00838f;
+	text-decoration: none;
+}
+
+.user-box-2 .username-anchor:hover {
+	text-decoration: underline;
+}
+
+.user-box-2 .elite-anchor,
+.user-box-2 .elite-anchor:visited {
+	color: #ff523d;
+	text-decoration: none;
+}
+
+.user-box-2 .elite-anchor:hover {
+	text-decoration: underline;
+}
