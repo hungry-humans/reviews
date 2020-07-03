@@ -1,9 +1,6 @@
 -- If superuser:    psql postgres < schema.sql
 -- If user:         psql -U me -d postgres < schema.sql
-DROP DATABASE yelp;
 CREATE DATABASE yelp;
-
-ALTER DATABASE yelp OWNER TO me;
 
 \connect yelp
 

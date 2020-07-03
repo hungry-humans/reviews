@@ -1,0 +1,4 @@
+FROM postgres
+ENV POSTGRES_PASSWORD 7047
+COPY schema.sql /schema.sql
+EXPOSE 5432

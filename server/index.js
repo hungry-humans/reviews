@@ -32,7 +32,6 @@ app.post('/biz/:business_id/reviews', (req, res) => {
   VALUES (${req.body.user_id}, ${req.body.business_id}, '${req.body.business_name.replace("\'", "\'\'")}', CURRENT_TIMESTAMP, ${req.body.rating}, ${req.body.check_ins}, '${req.body.body.replace("\'", "\'\'")}', ${req.body.useful_count}, ${req.body.funny_count}, ${req.body.cool_count}, ${req.body.useful_active}, ${req.body.funny_active}, ${req.body.cool_active})`;
   db.query(queryString, (error, result) => {
     if (error) {
-      console.log(error);
       res.send(error);
     } else {
       res.send(result);
@@ -43,7 +42,7 @@ app.post('/biz/:business_id/reviews', (req, res) => {
 
 app.put('/biz/:business_id/reviews/:review_id/:count/:action/:type/:active', (req, res) => {
   const action = (req.params.action === 'increment') ? '+ 1' : '- 1';
-  const queryString = `UPDATE reviews SET ${req.params.count} = ${req.params.count} ${action}, ${req.params.type} = ${req.params.active} WHERE reviews.review_id = ${req.params.review_id}`
+  const queryString = `UPDATE reviews SET ${req.params.count} = ${req.params.count} ${action}, ${req.params.type} = ${req.params.active} WHERE reviews.review_id = ${req.params.review_id}`;
   db.query(queryString, (error, result) => {
     if (error) {
       res.status(400).send(error);
@@ -53,4 +52,4 @@ app.put('/biz/:business_id/reviews/:review_id/:count/:action/:type/:active', (re
   });
 });
 
-app.listen(port, () => console.log(`Listening on port http://localhost:${port}`));
+app.listen(port, () => console.log(`Listening on port 172.17.0.3:${port}`));

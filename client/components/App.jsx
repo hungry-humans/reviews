@@ -29,14 +29,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/biz/1/reviews')
+    axios.get('biz/1/reviews')
       .then(results => {
         this.setState({
           allReviews: results.data,
           visibleReviews: results.data
         });
         const getPhotos = results.data.map(review => {
-          return axios.get(`http://localhost:3000/biz/1/reviews/${review.review_id}/photos`)
+          return axios.get(`biz/1/reviews/${review.review_id}/photos`)
             .then(results => {
               return results;
             });
@@ -162,7 +162,7 @@ class App extends React.Component {
   }
 
   handleReviewButtonClick(review, count, action, type, active) {
-    axios.put(`http://localhost:3000/biz/${review.business_id}/reviews/${review.review_id}/${count}/${action}/${type}/${active}`)
+    axios.put(`biz/${review.business_id}/reviews/${review.review_id}/${count}/${action}/${type}/${active}`)
       .then(result => {
         let updateCount;
         let updateActive;
@@ -201,7 +201,7 @@ class App extends React.Component {
       business_name: review.business_name,
       created_at: Date.now(),
       rating: Number(rating),
-      checkins: 0,
+      check_ins: 0,
       body: body,
       useful_count: 0,
       funny_count: 0,
@@ -210,7 +210,7 @@ class App extends React.Component {
       funny_active: false,
       cool_active: false
     };
-    axios.post(`http://localhost:3000/biz/${review.business_id}/reviews`, obj)
+    axios.post(`biz/${review.business_id}/reviews`, obj)
       .then(result => console.log(result));
   }
 

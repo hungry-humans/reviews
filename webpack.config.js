@@ -36,6 +36,9 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    concatenateModules: true
+  },
   watchOptions: {
     poll: true
   }
